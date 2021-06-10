@@ -21,7 +21,7 @@ string genRandomString(const int len)
     str.reserve(len);
 
     random_device generator; // use default_random_engine to have something deterministic
-    uniform_int_distribution<int> distribution(0, sizeof(letters) - 1);
+    uniform_int_distribution<int> distribution(0, sizeof(letters) - 2);
 
     for (int i = 0; i < len; i++)
     {
