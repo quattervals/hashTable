@@ -27,7 +27,7 @@ int HashTable::oha1(string key)
     int idx = 0;
     for (string::size_type i = 0; i < key.size(); i++)
     {
-        idx += (i + 1) * key[i];
+        idx += (i + 1) * (int)key[i];
     }
     return idx % table.size();
 }
