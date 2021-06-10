@@ -52,8 +52,9 @@ int main()
         refVec.push_back(item);
     }
 
-    chrono::duration<unsigned int, ratio<1, 1000000>> totDurationHash;
-    chrono::duration<unsigned int, ratio<1, 1000000>> totDurationNaive;
+    auto totDurationHash = chrono::duration<unsigned int, ratio<1, 1000000>>::zero();
+    auto totDurationNaive = chrono::duration<unsigned int, ratio<1, 1000000>>::zero();
+
 
     for (int i = 0; i < NUM_ITEMS; i++)
     {
