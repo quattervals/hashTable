@@ -40,8 +40,7 @@ int main()
 #define KEY_LEN 5            //!< length of the key that will be hashed
 
     HashTable myTable(TABLE_INIT_SIZE);
-    //keep track of the items in reference vector
-    vector<keyValPair_t> refVec;
+    vector<keyValPair_t> refVec; //keep track of the items in reference vector
     refVec.reserve(NUM_ITEMS);
 
     // generate random items and put them into both structures
@@ -70,7 +69,7 @@ int main()
         totDurationHash += chrono::duration_cast<chrono::microseconds>(stop - start);
 
         start = chrono::high_resolution_clock::now();
-        keyValPair_t naiveFind = findKeyNaive(keyToFind, refVec);
+        keyValPair_t naiveFind = findKeyNaive(keyToFind, refVec); //the naive search simply scans the refVec
         stop = chrono::high_resolution_clock::now();
         if (naiveFind.key != keyToFind)
         {
