@@ -13,7 +13,7 @@ using namespace std;
 HashTable::HashTable(int size = INITIAL_SIZE) : table(size) // use list initializer to zero initialize the vec.
 {
     //zero intialized table vector is equivalent to "table(size, {string(""), 0})"
-    itemCount = 0;
+
     totalShiftCount = 0;
 }
 
@@ -55,7 +55,6 @@ void HashTable::insert(keyValPair_t pair)
         totalShiftCount++;
     }
     table.at(ix) = pair;
-    itemCount++;
 }
 
 keyValPair_t HashTable::find(string key)
