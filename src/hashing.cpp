@@ -76,5 +76,12 @@ int main()
          << totDurationNaive.count() / totDurationHash.count() * 100 << "%" << endl;
     cout << "Total shift count: " << myTable.getTotShiftCount() << endl;
 
+    // try to find non-existing key
+    keyValPair_t hashFind = myTable.find("non_existing_key");
+    if (hashFind.key != string(""))
+    {
+        cout << "found non-existing key: that's an error" << endl;
+    }
+
     return 0;
 }
