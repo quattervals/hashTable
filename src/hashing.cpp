@@ -10,15 +10,6 @@ using namespace std;
 
 keyValPair_t findKeyNaive(string key, vector<keyValPair_t> const &vec)
 {
-    for (vector<keyValPair_t>::size_type i = 0; i < vec.size(); i++)
-    {
-        if (vec[i].key == key)
-        {
-            return vec[i];
-        }
-    }
-
-#ifdef USE_SLOW
     for (keyValPair_t v : vec)
     {
         if (v.key == key)
@@ -26,8 +17,6 @@ keyValPair_t findKeyNaive(string key, vector<keyValPair_t> const &vec)
             return v;
         }
     }
-#endif
-
     return {string(""), 0};
 }
 
