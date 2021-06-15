@@ -15,8 +15,8 @@
 
 CXX      := -c++
 CXXFLAGS := -pedantic-errors -Wall -Wextra -std=gnu++17
-#CXXFLAGS += -Werror
-#CXXFLAGS += -Wno-unused-variable # useful for hacking but disable for serious coding
+CXXFLAGS += -Werror
+CXXFLAGS += -Wno-unused-variable # useful for hacking but disable for serious coding
 LDFLAGS  := -L/usr/lib -lstdc++ -lm
 BUILD    := ./build
 OBJ_DIR  := $(BUILD)/objects

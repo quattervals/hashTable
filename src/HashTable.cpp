@@ -70,6 +70,13 @@ keyValPair_t HashTable::find(string key)
     while (table[ix].key != key && table[ix].key != string(""))
     {
         ix = (ix + intPow(psteps, PROBING_EXPONENT)) % table.size();
+
+        // if the table is full but the key is not found, we stop when we have searched every position
+        if ((std::vector<keyValPair_s>::size_type)psteps == table.size())
+        {
+            cout << "key doesn't exist" << endl;
+            break;
+        }
         psteps++;
     }
     if (table[ix].key == key)

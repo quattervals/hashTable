@@ -10,15 +10,6 @@ using namespace std;
 
 keyValPair_t findKeyNaive(string key, vector<keyValPair_t> const &vec)
 {
-    for (vector<keyValPair_t>::size_type i = 0; i < vec.size(); i++)
-    {
-        if (vec[i].key == key)
-        {
-            return vec[i];
-        }
-    }
-
-#ifdef USE_SLOW
     for (keyValPair_t v : vec)
     {
         if (v.key == key)
@@ -26,8 +17,6 @@ keyValPair_t findKeyNaive(string key, vector<keyValPair_t> const &vec)
             return v;
         }
     }
-#endif
-
     return {string(""), 0};
 }
 
@@ -85,6 +74,13 @@ int main()
     cout << "speedup hash compared to naive: "
          << totDurationNaive.count() / totDurationHash.count() * 100 << "%" << endl;
     cout << "Total shift count: " << myTable.getTotShiftCount() << endl;
+
+    // try to find non-existing key
+    keyValPair_t hashFind = myTable.find("non_existing_key");
+    if (hashFind.key != string(""))
+    {
+        cout << "found non-existing key: that's an error" << endl;
+    }
 
     return 0;
 }
