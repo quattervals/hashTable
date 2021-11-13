@@ -14,7 +14,7 @@
 #
 
 CXX      := -c++
-CXXFLAGS := -pedantic-errors -Wall -Wextra -std=gnu++17
+CXXFLAGS := -pedantic-errors -Wall -Wextra -std=gnu++2a
 CXXFLAGS += -Werror
 CXXFLAGS += -Wno-unused-variable # useful for hacking but disable for serious coding
 LDFLAGS  := -L/usr/lib -lstdc++ -lm
